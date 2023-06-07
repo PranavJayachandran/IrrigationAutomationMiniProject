@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Navbar with title and something else</div>
+    <div>
+      <div>
+        <label> Soil Type </label>
+        <select id="soiltype">
+          <option value="1">Dry</option>
+          <option value="2">Humid</option>
+          <option value="3">Wet</option>
+        </select>
+      </div>
+      <div>
+        <label> Crop Type </label>
+        <select id="croptype">
+          <option value="1">Cabbage</option>
+          <option value="2">Melon</option>
+          <option value="3">Bean</option>
+          <option value="3">Tomato</option>
+          <option value="3">Onion</option>
+        </select>
+      </div>
+      <div>
+        <label>Temperature</label>
+        <input id="temperature" placeholder="temp" value="25" />
+      </div>
+      <div>
+        <label> Region </label>
+        <select id="region">
+          <option value="1">Desert</option>
+          <option value="2">Semi Arid</option>
+          <option value="3">Semi Humid</option>
+          <option value="4">Humid</option>
+        </select>
+      </div>
+      <button onclick="SubmitForm()">Submit</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
