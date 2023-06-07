@@ -1,4 +1,5 @@
 from flask import Flask,render_template,request
+import os
 import requests
 app = Flask(__name__)
  
@@ -11,7 +12,8 @@ def getweather():
     input_json = request.get_json(force=True)
     latitude=input_json['latitude']
     longitude=input_json['longitude']
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=8112f068a8a7c56dfb2d10b9daadaade"%(latitude,longitude)
+    weather_api_key=os.environ["WEATHER_API_KEY"]
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s"%(latitude,longitude,weather_api_key)
     payload = {}
     headers = {}
     response = requests.request("GET", url, headers=headers, data=payload)
