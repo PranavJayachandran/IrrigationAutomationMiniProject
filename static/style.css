@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap");
+
+.aquasense {
+  margin-left: 10px;
+  font-family: "Abhaya Libre";
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.login {
+  padding: 10px 16px;
+  font-family: Abhaya Libre;
+  font-size: 18px;
+  background: #649468;
+  color: white;
+  border-radius: 15px;
+}
+.main {
+  height: 90vh;
+  display: flex;
+}
+.maintitle {
+  font-family: "Abhaya Libre";
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+.mainpart1 {
+  flex: 1;
+  font-family: "Abhaya Libre";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.image-bg {
+  flex: 1;
+}
+.main-content {
+}
+.content {
+  display: flex;
+  height: 100vh;
+}
+.leftpart {
+  padding: 40px;
+  font-family: "Abhaya Libre";
+  font-size: 20px;
+  flex: 1;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rightpart {
+  padding: 0px 20px;
+}
+select {
+  margin-top: 4px;
+  display: block;
+  width: 40vw;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+input {
+  display: block;
+  width: 38vw;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+.submit {
+  background: #649468;
+  width: 40vw;
+  padding: 6px 0px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+.mainchange {
+  z-index: 100;
+  margin-left: 80px;
+}
+
+.mainlogin {
+  height: 20px;
+}
+.container {
+  padding: 0px 40px;
+  margin-top: 85px;
+  height: 70vh;
+  border: solid;
+  border-color: #649468;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.image {
+  display: flex;
+  justify-content: flex-start;
+}
+.container1 {
+  display: flex;
+  align-items: flex-end;
+}
+.mm {
+  font-size: 40px;
+  font-weight: 700;
+  color: #649468;
+  font-family: "Abhaya Libre";
+}
+.irreq {
+  font-size: 40px;
+  font-family: "Abhaya Libre";
+  width: 20vw;
+}
+.circle {
+  height: 120px;
+  width: 120px;
+  border: solid;
+  border-width: 10px;
+  border-color: #649468;
+  border-radius: 50%;
+  position: fixed;
+  top: 120px;
+  left: 60px;
+  z-index: 100;
+}

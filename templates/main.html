@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar" style="margin-right: 30px">
+      <div class="aquasense mainchange">Aquasense</div>
+      <div class="login mainlogin">Logout</div>
+    </div>
+    <div class="content">
+      <div style="position: relative">
+        <div class="circle"></div>
+        <div
+          style="
+            margin-left: -10px;
+            width: 150px;
+            background-color: #649468;
+            margin-top: -50px;
+            height: 100vh;
+            position: relative;
+          "
+        ></div>
+      </div>
+      <div class="leftpart">
+        <div>
+          <label> Soil Type </label>
+          <select id="soiltype">
+            <option value="1">Dry</option>
+            <option value="2">Humid</option>
+            <option value="3">Wet</option>
+          </select>
+        </div>
+        <div>
+          <label> Crop Type </label>
+          <select id="croptype">
+            <option value="1">Cabbage</option>
+            <option value="2">Melon</option>
+            <option value="3">Bean</option>
+            <option value="3">Tomato</option>
+            <option value="3">Onion</option>
+          </select>
+        </div>
+        <div>
+          <label>Temperature</label>
+          <input id="temperature" placeholder="temp" value="25" />
+        </div>
+        <div>
+          <label> Region </label>
+          <select id="region">
+            <option value="1">Desert</option>
+            <option value="2">Semi Arid</option>
+            <option value="3">Semi Humid</option>
+            <option value="4">Humid</option>
+          </select>
+        </div>
+        <div onclick="SubmitForm()" class="submit">Submit</div>
+      </div>
+
+      <div class="rightpart">
+        <div class="container">
+          <div class="container1">
+            <div class="image" style="padding: 10px">
+              <img
+                src="{{ url_for('static', filename='ion_water-outline.jpg') }} "
+                style="height: 150px; width: 150px"
+              />
+              <img
+                src="{{ url_for('static', filename='ion_water-outline.jpg') }} "
+                style="
+                  height: 80px;
+                  width: 80px;
+                  margin-left: -30px;
+                  margin-top: 10px;
+                "
+              />
+            </div>
+            <div class="mm">6mm</div>
+          </div>
+          <div class="irreq">Irrigation Requirement</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
