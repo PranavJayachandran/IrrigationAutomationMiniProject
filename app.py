@@ -3,8 +3,12 @@ import os
 import requests
 app = Flask(__name__)
  
-@app.route('/homepage')
-def homepage():
+@app.route('/main')
+def main():
+    return render_template("main.html")
+
+@app.route('/home')
+def home():
     return render_template("home.html")
 
 @app.route("/getweather",methods=['POST'])

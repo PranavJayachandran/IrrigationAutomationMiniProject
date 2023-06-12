@@ -2,46 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
-  <body>
-    <div>Navbar with title and something else</div>
-    <div>
-      <div>
-        <label> Soil Type </label>
-        <select id="soiltype">
-          <option value="1">Dry</option>
-          <option value="2">Humid</option>
-          <option value="3">Wet</option>
-        </select>
-      </div>
-      <div>
-        <label> Crop Type </label>
-        <select id="croptype">
-          <option value="1">Cabbage</option>
-          <option value="2">Melon</option>
-          <option value="3">Bean</option>
-          <option value="3">Tomato</option>
-          <option value="3">Onion</option>
-        </select>
-      </div>
-      <div>
-        <label>Temperature</label>
-        <input id="temperature" placeholder="temp" value="25" />
-      </div>
-      <div>
-        <label> Region </label>
-        <select id="region">
-          <option value="1">Desert</option>
-          <option value="2">Semi Arid</option>
-          <option value="3">Semi Humid</option>
-          <option value="4">Humid</option>
-        </select>
-      </div>
-      <button onclick="SubmitForm()">Submit</button>
+  <body style="height: 100vh; width: 100vw; overflow: hidden">
+    <div class="navbar" style="margin-right: 30px">
+      <div class="aquasense">Aquasense</div>
+      <div class="login">Login</div>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div class="main">
+      <div class="mainpart1">
+        <div class="maintitle">
+          <div>
+            <span style="color: #649468">Smarter</span>
+            Way
+          </div>
+          <div>to Irrigate</div>
+        </div>
+
+        <div class="main-content">
+          <p style="width: 40vw; margin-left: 180px">
+            Introducing AquaSense, the ultimate smart irrigation app that
+            revolutionizes the way you manage and conserve water for your lawn
+            and garden. With AquaSense, you can effortlessly control your
+            irrigation system from anywhere, at any time, using your smartphone
+            or tablet.
+          </p>
+        </div>
+      </div>
+      <div class="image-bg">
+        <img
+          src="{{ url_for('static', filename='Group 4.png') }} "
+          style="
+            height: 600px;
+            width: 1000px;
+            margin-left: -340px;
+            margin-top: -50px;
+          "
+        />
+      </div>
+    </div>
+    <div>
+      <img
+        src="{{ url_for('static', filename='Rectangle 13.png') }} "
+        style="height: 843px; width: 2245px; margin-top: -300px"
+      />
+    </div>
   </body>
 </html>
