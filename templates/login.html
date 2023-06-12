@@ -1,0 +1,23 @@
+<html>
+    <head><title>Login</title>
+        <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"/>
+    </head>
+    <body>
+        <div class="login-main">
+        <div class="brandname">Aquasense</div>
+        <div class="login-container">
+            <center>
+            <div class="heading">Welcome Back</div>
+            <form method="POST" action="">
+                <input class="textbox" type="text" name="username" placeholder="Username"/><br>
+                <input class="textbox" type="password" name="password" placeholder="Password"/><br>
+                <input class="login-submit" type="submit" value="Login"/><br>
+                <p class="subh">Don't have an account ? <a class="signuplink" href="">Sign Up</a></p>
+            </form>
+            </center>
+        </div>
+    </div>
+    </body>
+</html>
