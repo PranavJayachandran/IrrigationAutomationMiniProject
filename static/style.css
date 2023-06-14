@@ -13,7 +13,7 @@
 }
 .login {
   padding: 10px 16px;
-  font-family: "Abhaya Libre";
+  font-family: "Montserrat";
   background: #649468;
   color: white;
   border-radius: 15px;
@@ -38,7 +38,7 @@
 }
 .mainpart1 {
   flex: 1;
-  font-family: "Abhaya Libre";
+  font-family: "Montserrat";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,11 +124,11 @@ input {
   font-size: 40px;
   font-weight: 700;
   color: #649468;
-  font-family: "Abhaya Libre";
+  font-family: "Montserrat";
 }
 .irreq {
   font-size: 40px;
-  font-family: "Abhaya Libre";
+  font-family: "Montserrat";
   width: 20vw;
 }
 .circle {
@@ -143,12 +143,16 @@ input {
   left: 60px;
   z-index: 100;
 }
+.intro {
+  width: 40vw;
+  margin-left: 180px;
+}
 /* Login page style */
 .login-main {
-  background-image: url("login.png");
-  background-repeat: no-repeat;
-  background-size: 90%;
-  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 .brandname {
   padding: 1%;
@@ -157,40 +161,45 @@ input {
   font-weight: 800;
 }
 .login-container {
-  margin-left: 50%;
-  margin-top: -1.5%;
   background-color: #649468;
-  border-radius: 7%;
-  padding: 10%;
-  width: 28%;
-  height: 50%;
-  align-content: center;
+  height: 90vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  gap: 40px;
+}
+.login-page-container {
+  margin-top: -20px;
+  display: flex;
 }
 .heading {
   font-family: "Montserrat";
   font-weight: 900;
   font-size: 1.5rem;
-  margin: auto;
-  min-width: max-content;
+  text-align: center;
+  color: white;
 }
 .textbox {
   font-family: "Montserrat";
   background: transparent;
   border: 1.5px solid white;
-  border-radius: 4%;
-  width: 100%;
+  border-radius: 10px;
+  width: 400px;
   padding: 3%;
-  margin-top: 10%;
   color: #ffffff;
   outline: none;
 }
 .login-submit {
   font-family: "Montserrat";
-  margin-top: 10%;
   width: 100%;
   background-color: #ffffff;
   color: black;
-  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 900;
   text-align: center;
   border: none;
@@ -200,12 +209,68 @@ input {
 }
 .subh {
   font-family: "Montserrat";
-  margin-top: 10%;
   font-weight: 100;
+  text-align: center;
 }
 .signuplink {
   font-family: "Montserrat";
   font-weight: 900;
   text-decoration: none;
   color: #ffffff;
+}
+
+.main-content {
+  font-family: "Montserrat";
+}
+.main-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Styles specific to screens with a maximum width of 768px or less */
+  .rightpart {
+    width: 0px;
+    background: #000;
+    overflow: hidden;
+    padding: 0px;
+  }
+  .circle {
+    height: 60px;
+    width: 60px;
+    left: 110px;
+    border-width: 7px;
+  }
+  .mainlogin {
+    margin-right: -40px;
+    font-size: 15px;
+  }
+  .leftpart {
+    font-size: 15px;
+  }
+  select {
+    width: 30vw;
+    height: 20px;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 0px 10px;
+  }
+  input {
+    width: 25vw;
+    height: 20px;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 0px 10px;
+  }
+
+  .image-bg {
+    display: none;
+  }
+  .image-bottom {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .maintitle {
+    font-size: 60px;
+  }
 }
