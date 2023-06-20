@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Login</title>
+    <title>Sign Up</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
@@ -20,7 +20,7 @@
         <div class="heading">Welcome</div>
         <form
           method="POST"
-          action="/login"
+          action=""
           style="display: flex; flex-direction: column; gap: 25px"
         >
           <input
@@ -35,10 +35,16 @@
             name="password"
             placeholder="Password"
           />
-          <input class="login-submit" type="submit" value="Login" />
+          <input
+            class="textbox"
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+          <input class="login-submit" type="submit" value="Sign Up" />
           <p class="subh">
             Don't have an account ?
-            <a class="signuplink" href="/signup">Sign Up</a>
+            <a class="signuplink" href="/login">Login</a>
           </p>
         </form>
       </div>

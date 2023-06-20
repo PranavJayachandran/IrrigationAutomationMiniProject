@@ -6,13 +6,16 @@ function SubmitForm() {
     let croptype = document.getElementById("croptype").value
     let region = document.getElementById("region").value
     let temperature = document.getElementById("temperature").value
+    var element = document.getElementsByClassName("loader")[0]
+    element.classList.remove("hide_loader")
     GetWeatherCondition().then(result => {
         let weather = result['weather'][0]
-        console.log(weather)
         let weather_condition = MapWeatherToWeatherCondition(weather);
-        console.log(weather_condition)
-
-        PredictWaterRequirment(soiltype, croptype, region, temperature, weather_condition).then(result => result.text()).then(temp => console.log(temp))
+        PredictWaterRequirment(soiltype, croptype, region, temperature, weather_condition).then(result => result.text())
+            .then(temp => {
+                document.getElementsByClassName("prediction")[0].innerText = "Water Requirement is " + temp + " mm"
+                element.classList.add("hide_loader")
+            })
     });
 }
 
@@ -61,7 +64,7 @@ function MapWeatherToWeatherCondition(weather) {
     else if (weather_id == 800)
         return 2
     else (weather_id >= 801 && weather_id <= 804)
-    return 1
+    return 4
 }
 
 function PredictWaterRequirment(soiltype, croptype, region, temperature, weather_condition) {
