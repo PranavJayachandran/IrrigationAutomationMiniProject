@@ -4,6 +4,8 @@ import requests
 from flask_jwt_extended import JWTManager, jwt_required,create_access_token
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
+import pickle
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -111,8 +113,18 @@ def predictwaterrequirement():
     temperature=input_json['temperature']
     region=input_json['region']
     weather_condition=input_json['weather_condition']
-    print(soiltype,croptype,temperature,region,weather_condition)
-    return "done"
+    with open('model.pkl', 'rb') as file:
+        model = pickle.load(file)
+
+    new_data = pd.DataFrame({
+    'CROP TYPE': [croptype],
+    'SOIL TYPE': [soiltype],
+    'REGION': [region],
+    'TEMPERATURE GROUP': [3],
+    'WEATHER CONDITION': [weather_condition]
+    })
+    prediction = model.predict(new_data)
+    return str(prediction[0])
 
 with app.app_context():
     db.create_all()
