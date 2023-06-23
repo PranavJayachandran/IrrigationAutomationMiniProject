@@ -13,7 +13,7 @@ function SubmitForm() {
         let weather_condition = MapWeatherToWeatherCondition(weather);
         PredictWaterRequirment(soiltype, croptype, region, temperature, weather_condition).then(result => result.text())
             .then(temp => {
-                document.getElementsByClassName("prediction")[0].innerText = "Water Requirement is " + temp + " mm"
+                document.getElementsByClassName("mm")[0].innerText = temp + " mm"
                 element.classList.add("hide_loader")
             })
     });

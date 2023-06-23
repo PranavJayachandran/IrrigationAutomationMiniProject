@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,jsonify
+from flask import Flask,render_template,request,jsonify,redirect
 import os
 import requests
 from flask_jwt_extended import JWTManager, jwt_required,create_access_token
@@ -63,7 +63,7 @@ def login_post():
     if user and bcrypt.check_password_hash(user.password, password):
         token = create_access_token(identity=username)
         # return jsonify({'token': token.decode('utf-8')})
-        return render_template("main.html")
+        return redirect("/main")
 
     return jsonify({'message': 'Invalid credentials'}), 401
 
@@ -124,7 +124,7 @@ def predictwaterrequirement():
     'WEATHER CONDITION': [weather_condition]
     })
     prediction = model.predict(new_data)
-    return str(prediction[0])
+    return str((round(prediction[0], 2)))
 
 with app.app_context():
     db.create_all()
