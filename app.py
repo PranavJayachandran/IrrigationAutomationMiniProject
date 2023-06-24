@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,jsonify,redirect
 import os
 import requests
-from flask_jwt_extended import JWTManager, jwt_required,create_access_token
+from flask_jwt_extended import JWTManager, jwt_required,create_access_token,set_access_cookies
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 import pickle
@@ -47,7 +47,9 @@ def register():
     new_user = User(username=username, email=email, password=hashed_password)
     db.session.add(new_user)
     db.session.commit()
-    token = create_access_token(identity=username)
+    access_token = create_access_token(identity=username)
+    response = jsonify({'message': 'Sign Up successful'})
+    set_access_cookies(response, access_token) 
         # return jsonify({'token': token.decode('utf-8')})
 
     return render_template("main.html")
@@ -61,7 +63,9 @@ def login_post():
     user = User.query.filter_by(username=username).first()
 
     if user and bcrypt.check_password_hash(user.password, password):
-        token = create_access_token(identity=username)
+        access_token = create_access_token(identity=username)
+        response = jsonify({'message': 'Login successful'})
+        set_access_cookies(response, access_token)  
         # return jsonify({'token': token.decode('utf-8')})
         return redirect("/main")
 
@@ -81,7 +85,7 @@ jwt = JWTManager(app)
 
 
 
- 
+
 @app.route('/main')
 def main():
     return render_template("main.html")
@@ -89,6 +93,8 @@ def main():
 @app.route('/home')
 def home():
     return render_template("home.html")
+
+
 @app.route('/login')
 def login():
     return render_template("login.html")
@@ -104,7 +110,8 @@ def getweather():
     headers = {}
     response = requests.request("GET", url, headers=headers, data=payload)
     return(response.json())
- 
+
+
 @app.route("/predict",methods=["POST"])
 def predictwaterrequirement():
     input_json = request.get_json(force=True)

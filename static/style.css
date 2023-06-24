@@ -122,7 +122,7 @@ input {
   height: 20px;
 }
 .container {
-  padding: 0px 40px;
+  padding: 0px 20px;
   height: 70vh;
   margin-top: 40px;
   border: solid;
@@ -147,6 +147,7 @@ input {
   font-weight: 700;
   color: #649468;
   font-family: "Montserrat";
+  width: 180px;
 }
 .irreq {
   font-size: 40px;
